@@ -3,11 +3,11 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 
-const app = express(); // ✅ Moved up here
+const app = express(); 
 const PORT = 8080;
 
 // Middlewares
-app.use(cors()); // ✅ Now valid
+app.use(cors()); 
 app.use(bodyParser.json());
 
 let todos = [];
