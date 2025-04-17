@@ -1,93 +1,126 @@
+# Todo List Application
 
-# Todo List
+A full-stack task management application built with React (frontend) and Express.js (backend).
 
-A simple todo list application that allows users to manage their tasks. The app consists of both a backend and a frontend, with the backend handling API requests and the frontend providing the user interface.
+## Project Structure
+
+```
+todoList/
+├── frontend/          # React frontend
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── Task.js
+│   │   │   ├── TaskForm.js
+│   │   │   └── TaskList.js
+│   │   ├── App.js
+│   │   └── App.css
+│   └── package.json
+├── backend/          # Express.js backend
+│   ├── config/
+│   │   └── db.js    # Database configuration
+│   ├── data/
+│   │   └── tasks.db # SQLite database
+│   └── index.js     # Main server file
+└── bruno/           # API testing collection
+    └── tasks/       # Task-related API tests
+
+```
 
 ## Features
 
-- **Add tasks**: Users can add new tasks to their todo list.
-- **Mark tasks as completed**: Users can mark tasks as done.
-- **Delete tasks**: Users can remove tasks from their todo list.
-- **View tasks**: Users can see all tasks in a list.
+- Create, read, update, and delete tasks
+- Mark tasks as completed/incomplete
+- Filter tasks by status (All/Active/Completed)
+- Modern UI with loading states and error handling
+- SQLite database for data persistence
 
 ## Tech Stack
 
-- **Frontend**: 
-  - React (or another framework you're using for the frontend)
-  
-- **Backend**: 
-  - Node.js
+- **Frontend:**
+  - React
+  - Axios for API calls
+  - CSS for styling
+
+- **Backend:**
   - Express.js
-  
-- **Database**: 
-  - (Add your database here, if applicable, such as MongoDB, MySQL, etc.)
-  
-- **Version Control**:
-  - Git
+  - SQLite (better-sqlite3)
+  - CORS for cross-origin requests
 
-## Installation
+## Getting Started
 
-### 1. Clone the repository
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   # Install backend dependencies
+   cd backend
+   npm install
 
-```bash
-git clone https://github.com/youssefMouslih/todoList.git
+   # Install frontend dependencies
+   cd ../frontend
+   npm install
+   ```
+
+3. Start the backend server:
+   ```bash
+   cd backend
+   npm start
+   # Server runs on http://localhost:3001
+   ```
+
+4. Start the frontend development server:
+   ```bash
+   cd frontend
+   npm start
+   # Frontend runs on http://localhost:3000
+   ```
+
+## API Endpoints
+
+All API endpoints are prefixed with `/api`
+
+- `GET /api/tasks` - Get all tasks
+- `POST /api/tasks` - Create a new task
+- `PUT /api/tasks/:id` - Update a task
+- `DELETE /api/tasks/:id` - Delete a task
+
+## Testing with Bruno
+
+The project includes a Bruno API collection for testing the backend endpoints.
+
+1. Open Bruno app
+2. Open the collection from `/Users/useraccount/Desktop/todoList/bruno`
+3. Available test endpoints:
+   - Get All Tasks (GET)
+   - Create Task (POST)
+   - Update Task (PUT)
+   - Delete Task (DELETE)
+
+## Error Handling
+
+- Frontend displays user-friendly error messages
+- Backend includes comprehensive error logging
+- Database operations are wrapped in try-catch blocks
+- Input validation for task creation/updates
+
+## Database Schema
+
+```sql
+CREATE TABLE tasks (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT NOT NULL,
+    completed INTEGER DEFAULT 0,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
 ```
 
-### 2. Navigate to the project folder
+## Future Enhancements
 
-```bash
-cd todoList
-```
-
-### 3. Set up the backend
-
-- Navigate to the `backend` folder:
-
-```bash
-cd backend
-```
-
-- Install dependencies:
-
-```bash
-npm install
-```
-
-- Start the server:
-
-```bash
-npm start
-```
-
-The backend should now be running on `http://localhost:5000`.
-
-### 4. Set up the frontend
-
-- Navigate to the `frontend` folder:
-
-```bash
-cd frontend
-```
-
-- Install dependencies:
-
-```bash
-npm install
-```
-
-- Start the frontend development server:
-
-```bash
-npm start
-```
-
-The frontend should now be running on `http://localhost:3000`.
-
-## Usage
-
-1. Open the frontend in your browser.
-2. Add, complete, or delete tasks as needed.
-3. Tasks are stored on the backend, so changes persist between sessions.
+- User authentication
+- Task categories/tags
+- Due dates for tasks
+- Task priority levels
+- Search functionality
+- Dark mode theme
 
 ## Contributing
 

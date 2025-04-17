@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node --trace-warnings index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -15,11 +16,6 @@
     "body-parser": "^2.2.0",
     "cors": "^2.8.5",
     "express": "^5.1.0",
-<<<<<<< HEAD
-    "mysql2": "^3.14.0",
-    "sqlite3": "^5.1.7"
-=======
     "mysql2": "^3.14.0"
->>>>>>> ac6c60dd0b34071d12d258347af74a658c1bc37b
   }
 }
