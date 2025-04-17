@@ -1,5 +1,7 @@
 # Todo List Application
 
+> **New to web development?** Check out our [Beginner's Guide](BEGINNERS_GUIDE.md) for step-by-step instructions!
+
 A full-stack task management application built with React (frontend) and Express.js (backend).
 
 ## Project Structure
