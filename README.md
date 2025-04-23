@@ -11,40 +11,41 @@ todoList/
 ├── frontend/                # React frontend
 │   ├── src/
 │   │   ├── components/     # React components
-│   │   │   ├── Task.js
-│   │   │   ├── TaskForm.js
-│   │   │   └── TaskList.js
+│   │   │   ├── Task.js     # Task component
+│   │   │   ├── TaskForm.js # Task creation form
+│   │   │   └── TaskList.js # Task list container
 │   │   ├── context/        # React context providers
-│   │   ├── App.js
-│   │   ├── App.css
-│   │   ├── index.js
-│   │   └── index.css
+│   │   ├── App.js         # Main application component
+│   │   ├── App.css        # Application styles
+│   │   ├── index.js       # Application entry point
+│   │   └── index.css      # Global styles
 │   ├── public/             # Static assets
 │   ├── .env.development    # Development environment variables
 │   ├── .env.production     # Production environment variables
 │   ├── Dockerfile          # Frontend Docker configuration
 │   ├── netlify.toml        # Netlify deployment configuration
-│   └── package.json
+│   └── package.json        # Frontend dependencies and scripts
 ├── backend/                # Express.js backend
-│   ├── config/
+│   ├── config/            # Configuration files
 │   │   └── db.js          # Database configuration
-│   ├── data/
+│   ├── data/              # Data storage
 │   │   └── tasks.db       # SQLite database
-│   ├── .env.example        # Environment variables template
-│   ├── Dockerfile          # Backend Docker configuration
+│   ├── .env.example       # Environment variables template
+│   ├── Dockerfile         # Backend Docker configuration
 │   ├── Procfile           # Heroku deployment configuration
 │   ├── index.js           # Main server file
-│   └── package.json
+│   └── package.json       # Backend dependencies and scripts
 ├── bruno/                  # API testing collection
 │   └── bruno test/         # Task-related API tests
-│       ├── Create Task.bru
-│       ├── Delete Task.bru
-│       ├── Get All Tasks.bru
-│       ├── Update Task.bru
-│       └── bruno.json
+│       ├── Create Task.bru # Create task endpoint test
+│       ├── Delete Task.bru # Delete task endpoint test
+│       ├── Get All Tasks.bru # List tasks endpoint test
+│       ├── Update Task.bru # Update task endpoint test
+│       └── bruno.json     # Bruno configuration
 ├── docker-compose.yml      # Docker compose configuration
 ├── BEGINNERS_GUIDE.md     # Guide for new developers
 ├── DEPLOYMENT.md          # Deployment instructions
+├── DEPLOYMENT_GUIDE.md    # Detailed deployment guide
 └── README.md              # Project documentation
 ```
 
