@@ -22,9 +22,17 @@
 
 3. Set environment variables on Heroku:
    ```bash
+   # Set required environment variables
    heroku config:set PORT=3001
    heroku config:set CORS_ORIGIN=https://your-frontend-netlify-url.netlify.app
+   heroku config:set NODE_ENV=production
+
+   # Optional: Set security-related variables
+   heroku config:set RATE_LIMIT_WINDOW_MS=900000
+   heroku config:set RATE_LIMIT_MAX_REQUESTS=100
    ```
+
+   Note: Adjust rate limiting values based on your application's needs. These settings limit each IP to 100 requests per 15 minutes.
 
 4. Deploy to Heroku:
    ```bash

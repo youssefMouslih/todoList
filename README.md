@@ -180,6 +180,8 @@ This application is deployed using a monorepo strategy with the backend on Herok
 - **Backend (Heroku)**: https://shielded-caverns-84788-7f4ec210a2ee.herokuapp.com/
 - **Frontend (Netlify)**: https://glowing-cendol-2ed464.netlify.app
 
+Note: These URLs are for demonstration purposes. For production deployment, please update them with your own deployment URLs.
+
 ### Quick Deployment Steps
 
 1. **Backend (Heroku)**
