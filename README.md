@@ -2,30 +2,50 @@
 
 > **New to web development?** Check out our [Beginner's Guide](BEGINNERS_GUIDE.md) for step-by-step instructions!
 
-A full-stack task management application built with React (frontend) and Express.js (backend).
+A full-stack task management application built with React (frontend) and Express.js (backend). This application provides a robust task management system with support for local development, Docker deployment, and cloud hosting on Heroku (backend) and Netlify (frontend).
 
 ## Project Structure
 
 ```
 todoList/
-├── frontend/          # React frontend
+├── frontend/                # React frontend
 │   ├── src/
-│   │   ├── components/
+│   │   ├── components/     # React components
 │   │   │   ├── Task.js
 │   │   │   ├── TaskForm.js
 │   │   │   └── TaskList.js
+│   │   ├── context/        # React context providers
 │   │   ├── App.js
-│   │   └── App.css
+│   │   ├── App.css
+│   │   ├── index.js
+│   │   └── index.css
+│   ├── public/             # Static assets
+│   ├── .env.development    # Development environment variables
+│   ├── .env.production     # Production environment variables
+│   ├── Dockerfile          # Frontend Docker configuration
+│   ├── netlify.toml        # Netlify deployment configuration
 │   └── package.json
-├── backend/          # Express.js backend
+├── backend/                # Express.js backend
 │   ├── config/
-│   │   └── db.js    # Database configuration
+│   │   └── db.js          # Database configuration
 │   ├── data/
-│   │   └── tasks.db # SQLite database
-│   └── index.js     # Main server file
-└── bruno/           # API testing collection
-    └── tasks/       # Task-related API tests
-
+│   │   └── tasks.db       # SQLite database
+│   ├── .env.example        # Environment variables template
+│   ├── Dockerfile          # Backend Docker configuration
+│   ├── Procfile           # Heroku deployment configuration
+│   ├── index.js           # Main server file
+│   └── package.json
+├── bruno/                  # API testing collection
+│   └── bruno test/         # Task-related API tests
+│       ├── Create Task.bru
+│       ├── Delete Task.bru
+│       ├── Get All Tasks.bru
+│       ├── Update Task.bru
+│       └── bruno.json
+├── docker-compose.yml      # Docker compose configuration
+├── BEGINNERS_GUIDE.md     # Guide for new developers
+├── DEPLOYMENT.md          # Deployment instructions
+└── README.md              # Project documentation
 ```
 
 ## Features
@@ -39,16 +59,24 @@ todoList/
 ## Tech Stack
 
 - **Frontend:**
-  - React
+  - React for UI components
   - Axios for API calls
   - CSS for styling
+  - Environment variables for configuration
+  - Netlify for deployment
 
 - **Backend:**
-  - Express.js
-  - SQLite (better-sqlite3)
+  - Express.js server
+  - SQLite (better-sqlite3) for data persistence
   - CORS for cross-origin requests
+  - Environment variables for configuration
+  - Heroku for deployment
 
 ## Getting Started
+
+You can run this application either locally or using Docker.
+
+### Local Development
 
 1. Clone the repository
 2. Install dependencies:
@@ -74,6 +102,24 @@ todoList/
    cd frontend
    npm start
    # Frontend runs on http://localhost:3000
+   ```
+
+### Docker Deployment
+
+1. Make sure Docker Desktop is running
+2. Build and start the containers:
+   ```bash
+   docker compose up --build
+   ```
+   This will:
+   - Start the backend on http://localhost:3001
+   - Start the frontend on http://localhost:3000
+   - Enable hot-reloading for development
+   - Automatically restart containers if they crash
+
+3. To stop the application:
+   ```bash
+   docker compose down
    ```
 
 ## API Endpoints
@@ -123,6 +169,43 @@ CREATE TABLE tasks (
 - Task priority levels
 - Search functionality
 - Dark mode theme
+
+## Production Deployment
+
+This application can be deployed to Heroku (backend) and Netlify (frontend). For detailed deployment instructions, check out our [Deployment Guide](DEPLOYMENT.md).
+
+### Quick Deployment Steps
+
+1. **Backend (Heroku)**
+   - Create a Heroku account and install Heroku CLI
+   - Create a new Heroku app
+   - Set environment variables (PORT, CORS_ORIGIN)
+   - Deploy using Git
+
+2. **Frontend (Netlify)**
+   - Create a Netlify account
+   - Build the frontend
+   - Deploy using Netlify CLI or Dashboard
+   - Configure environment variables
+
+## Troubleshooting
+
+### Common Issues
+
+1. **Frontend can't connect to backend**
+   - Verify CORS_ORIGIN in backend matches Netlify URL
+   - Check REACT_APP_API_URL in frontend environment
+   - Ensure backend API is running
+
+2. **Docker issues**
+   - Ensure Docker Desktop is running
+   - Check if ports 3000/3001 are available
+   - Verify docker-compose.yml configuration
+
+3. **Database errors**
+   - Check file permissions for SQLite database
+   - Verify database schema migrations
+   - Ensure proper error handling
 
 ## Contributing
 

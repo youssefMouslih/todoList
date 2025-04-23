@@ -5,10 +5,14 @@ const bodyParser = require('body-parser');
 const db = require('./config/db');
 
 const app = express(); 
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 // Middlewares
-app.use(cors()); 
+app.use(cors({
+  origin: process.env.CORS_ORIGIN || 'http://localhost:3000',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+})); 
 app.use(bodyParser.json());
 
 // Debug middleware to log all requests

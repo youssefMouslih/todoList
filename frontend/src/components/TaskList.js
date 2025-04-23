@@ -3,7 +3,7 @@ import axios from 'axios';
 import Task from './Task';
 import TaskForm from './TaskForm';
 
-const API_URL = 'http://localhost:3001/api';
+const API_URL = process.env.REACT_APP_API_URL;
 
 const TaskList = () => {
   const [tasks, setTasks] = useState([]);
