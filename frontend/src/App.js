@@ -11,6 +11,9 @@ function App() {
       <main>
         <TaskList />
       </main>
+      <footer className="App-footer">
+        <p>Developed by Youssef Mouslih</p>
+      </footer>
     </div>
   );
 }
