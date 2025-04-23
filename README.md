@@ -172,7 +172,12 @@ CREATE TABLE tasks (
 
 ## Production Deployment
 
-This application can be deployed to Heroku (backend) and Netlify (frontend). For detailed deployment instructions, check out our [Deployment Guide](DEPLOYMENT.md).
+This application is deployed using a monorepo strategy with the backend on Heroku and frontend on Netlify. For detailed deployment instructions and troubleshooting, check out our [Deployment Guide](DEPLOYMENT_GUIDE.md).
+
+### Deployment URLs
+
+- **Backend (Heroku)**: https://shielded-caverns-84788-7f4ec210a2ee.herokuapp.com/
+- **Frontend (Netlify)**: https://glowing-cendol-2ed464.netlify.app
 
 ### Quick Deployment Steps
 
@@ -180,13 +185,13 @@ This application can be deployed to Heroku (backend) and Netlify (frontend). For
    - Create a Heroku account and install Heroku CLI
    - Create a new Heroku app
    - Set environment variables (PORT, CORS_ORIGIN)
-   - Deploy using Git
+   - Deploy using Git subtree: `git subtree push --prefix backend heroku main`
 
 2. **Frontend (Netlify)**
    - Create a Netlify account
    - Build the frontend
-   - Deploy using Netlify CLI or Dashboard
-   - Configure environment variables
+   - Deploy using Netlify CLI
+   - Configure environment variables (REACT_APP_API_URL)
 
 ## Troubleshooting
 
